@@ -1,0 +1,74 @@
+<head>
+    <title>Trello Project</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div>
+        <div id="nav-bar">
+            <div id="left-bar">
+                <button type="button" class="button-style">
+                    <div class="fa fa-trello" style="font-size:16px;color:white">
+                        <span class="text-style">Boards</span>
+                    </div>
+                </button>
+
+                <button type="button" class="button-style">
+                    <div class="fa fa-search fa-flip-horizontal search-icon"></div>
+                    <input type="text" class="input-style" />
+                </button>
+            </div>
+
+            <div id="right-bar">
+                <button type="button" class="button-style-right">
+                    <div class="fa fa-plus" style="font-size:16px;color:white"></div>
+                </button>
+
+                <button type="button" class="button-style-right">
+                    <img class="avatar" src="https://trello-avatars.s3.amazonaws.com/7b8c07a482a364c8a90755cde9dd6b65/30.png" alt="Annia's Avatar'">
+                    <span class="header-user-info user">Annia J. Flores</span>
+                </button>
+
+                <button type="button" class="button-style-right">
+                    <div class="fa fa-info" style="font-size:16px;color:white"></div>
+                </button>
+
+                <button type="button" class="button-style-right">
+                    <div class="fa fa-bell-o" style="font-size:16px;color:white"></div>
+                </button>
+            </div>
+        </div>
+
+        <div id="content-header">
+            <button type="button" class="button-style-header">
+                <span id="main-board" style="color:white" contenteditable>Annia's Testing Board</span>
+            </button>
+
+            <button type="button" class="button-style-header">
+                <div class="fa fa-star-o" style="font-size:12px;color:white"></div>
+            </button>
+
+            <button type="button" class="button-style-header">
+                <div class="fa fa-lock" style="font-size:12px;color:white"></div>
+                <span class="private-text">Private</span>
+            </button>
+        </div>
+
+        <div id="content-header-right">
+            <button type="button" class="button-style-header-right">
+                <div class="fa fa-ellipsis-h" style="font-size:12px;color:white"></div>
+                <span class="menu-text">Show menu</span>
+            </button>
+        </div>
+
+        <div id="container">
+            <div id="add-a-list-btn">Add a list...</div>
+            <div id="save-list-box">
+                <input id="list-input-box" placeholder="Add a list..." />
+                <button type="button" id="save-list-btn">Save</button>
+            </div>
+        </div>
+    </div>
+</body>

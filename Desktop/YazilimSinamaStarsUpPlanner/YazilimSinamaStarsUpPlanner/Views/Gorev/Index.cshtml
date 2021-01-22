@@ -1,0 +1,42 @@
+﻿@using YazilimSinamaStarsUpPlanner.Models.Entity
+@model List<Gorevler>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/KullaniciLayout.cshtml";
+}
+
+
+<div style="margin-top:20px; margin-bottom:20px; margin-left:20px; margin-right:20px;">
+    <h2>GÖREVLER</h2>
+    <table class="table table-striped">
+        <tr>
+            <th>ID</th>
+            <th>GÖREV ADI</th>
+            <th>AÇIKLAMA</th>
+            <th>NOTLAR</th>
+            <th>TARİH</th>
+            <th>TAHMİNİ TARİH</th>
+            <th>GERÇEKLEŞEN TARİH</th>
+            <th>KULLANICI</th>
+            <th>SİL</th>
+            <th>GÜNCELLE</th>
+        </tr>
+        @foreach (var k in Model)
+        {
+            <tr>
+                <td>@k.GorevId</td>
+                <td>@k.GorevAdi</td>
+                <td>@k.Aciklama</td>
+                <td>@k.Notlar</td>
+                <td>@k.GorevTarih</td>
+                <td>@k.TahminiTarih</td>
+                <td>@k.GerceklesenTarih</td>
+                <td>@k.Kullanicilar.Ad&nbsp;@k.Kullanicilar.Soyad</td>
+                <td><a href="/Gorev/GorevSil/@k.GorevId" class="btn btn-danger">Sil</a></td>
+                <td><a href="/Gorev/GorevGetir/@k.GorevId" class="btn btn-success">Güncelle</a></td>
+            </tr>
+        }
+    </table>
+    <a href="/Gorev/GorevEkle/" class="btn btn-primary">Görev Ekle</a>
+
+</div>

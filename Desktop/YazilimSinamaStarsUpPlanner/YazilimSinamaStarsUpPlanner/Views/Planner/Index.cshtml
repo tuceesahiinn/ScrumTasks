@@ -1,0 +1,154 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>StarsUP Planner</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="~/Template/planner/trello/dist/style.css">
+
+    <title>Trello</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css'>
+    <link rel="stylesheet" href="~/Template/planner/dragdrop/dist//style.css">
+
+
+    <link rel="stylesheet" href="~/Template/webTemplate/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Template/webTemplate/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/Template/webTemplate/css/aos.css">
+    <link rel="stylesheet" href="~/Template/webTemplate/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/Template/webTemplate/css/owl.theme.default.min.css">
+
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="~/Template/webTemplate/css/templatemo-digital-trend.css">
+</head>
+<body>
+
+
+    <div>
+        <div id="nav-bar">
+            <div id="left-bar">
+                <button type="button" onclick="location='/Anasayfa/Index'" class="button-style">
+
+                    <div class="fa fa-line-chart" style="font-size:16px;color:white">
+                        <span class="text-style">STARS UP PLANNER</span>
+                    </div>
+
+                </button>
+            </div>
+
+
+
+            <div id="right-bar">
+               
+                <button type="button" onclick="location='/Gorev/Index'" class="button-style-right">
+                    <span class="fa fa-tasks" style="font-size:16px;color:white">  Görevler</span>
+                </button>
+
+                <button type="button" onclick="location='/Anasayfa/Index'" class="button-style-right">
+                    <div class="fa fa-close" style="font-size:16px;color:white">  Çıkış Yap </div>
+                </button>
+            </div>
+        </div>
+
+        <div id="content-header">
+            <button type="button" class="button-style-header">
+                <span id="main-board" style="color:white" contenteditable>Planner</span>
+            </button>
+            <label>Tahmini Tarih:</label> @TempData["TahminiTarih"].ToString()
+
+
+        </div>
+
+        <div class="add-task-container">
+            <input type="text" maxlength="12" id="taskText" placeholder="Yeni İş" onkeydown="if (event.keyCode == 13)
+                        document.getElementById('add').click()">
+            <button id="add" class="button add-button" onclick="addTask()">Yeni İş Ekle</button>
+        </div>
+
+        <div class="main-container">
+            <ul class="columns">
+
+                <li class="column to-do-column">
+                    <div class="column-header">
+                        <h4>Yapılacaklar</h4>
+                    </div>
+                    <ul class="task-list" id="to-do">
+                        <li class="task">
+                            <p>@TempData["YapilacakIs1"].ToString()</p>
+                        </li>
+                        <li class="task">
+                            <p>@TempData["YapilacakIs2"].ToString()</p>
+                        </li>
+                        <li class="task">
+                            <p>@TempData["YapilacakIs3"].ToString()</p>
+                        </li>
+                        <li class="task">
+                            <p>@TempData["YapilacakIs4"].ToString()</p>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="column doing-column">
+                    <div class="column-header">
+                        <h4>Yapılıyor</h4>
+                    </div>
+                    <ul class="task-list" id="doing">
+                        
+                    </ul>
+                </li>
+
+                <li class="column done-column">
+                    <div class="column-header">
+                        <h4>Yapıldı</h4>
+                    </div>
+                    <ul class="task-list" id="done">
+                        
+                    </ul>
+                </li>
+
+                <li class="column trash-column">
+                    <div class="column-header">
+                        <h4>Çöp</h4>
+                    </div>
+                    <ul class="task-list" id="trash">
+                        
+
+                    </ul>
+                    <div class="column-button">
+                        <button class="button delete-button" onclick="emptyTrash()">Sil</button>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+    <!-- partial -->
+    <script src="~/Template/planner/trello/dist/script.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.2/dragula.js'></script>
+    <script src="~/Template/planner/dragdrop/dist/script.js"></script>
+
+    <script src="~/Template/webTemplate/js/jquery.min.js"></script>
+    <script src="~/Template/webTemplate/js/bootstrap.min.js"></script>
+    <script src="~/Template/webTemplate/js/aos.js"></script>
+    <script src="~/Template/webTemplate/js/owl.carousel.min.js"></script>
+    <script src="~/Template/webTemplate/js/smoothscroll.js"></script>
+    <script src="~/Template/webTemplate/js/custom.js"></script>
+
+
+</body>
+</html>

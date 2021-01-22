@@ -1,0 +1,719 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{91DE0522-EED5-424F-B80F-C4F84CCAB07F}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>YazilimSinamaStarsUpPlanner</RootNamespace>
+    <AssemblyName>YazilimSinamaStarsUpPlanner</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44320</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="CocomoModulu\CocomoHesaplama.cs" />
+    <Compile Include="Controllers\AnasayfaController.cs" />
+    <Compile Include="Controllers\CikisYapController.cs" />
+    <Compile Include="Controllers\GirisYapController.cs" />
+    <Compile Include="Controllers\GorevController.cs" />
+    <Compile Include="Controllers\GorevDurumController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\KayitOlController.cs" />
+    <Compile Include="Controllers\PlannerController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\Durumlar.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\GorevDurumları.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\Gorevler.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\Kullanicilar.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\sysdiagrams.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Models\Entity\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\Entity\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\Entity\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Entity\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Template\form\css\main.css" />
+    <Content Include="Template\form\css\util.css" />
+    <Content Include="Template\form\fonts\font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="Template\form\fonts\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="Template\form\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="Template\form\fonts\font-awesome-4.7.0\HELP-US-OUT.txt" />
+    <Content Include="Template\form\fonts\iconic\css\material-design-iconic-font.css" />
+    <Content Include="Template\form\fonts\iconic\css\material-design-iconic-font.min.css" />
+    <Content Include="Template\form\fonts\iconic\fonts\Material-Design-Iconic-Font.svg" />
+    <Content Include="Template\form\fonts\images\bg-01.jpg" />
+    <Content Include="Template\form\fonts\images\icons\favicon.ico" />
+    <Content Include="Template\form\fonts\images\img-01.png" />
+    <Content Include="Template\form\fonts\montserrat\OFL.txt" />
+    <Content Include="Template\form\form.html" />
+    <Content Include="Template\form\js\main.js" />
+    <Content Include="Template\form\vendor\animate\animate.css" />
+    <Content Include="Template\form\vendor\animsition\css\animsition.css" />
+    <Content Include="Template\form\vendor\animsition\css\animsition.min.css" />
+    <Content Include="Template\form\vendor\animsition\js\animsition.js" />
+    <Content Include="Template\form\vendor\animsition\js\animsition.min.js" />
+    <Content Include="Template\form\vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="Template\form\vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="Template\form\vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="Template\form\vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="Template\form\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="Template\form\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Template\form\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="Template\form\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Template\form\vendor\bootstrap\js\popper.js" />
+    <Content Include="Template\form\vendor\bootstrap\js\popper.min.js" />
+    <Content Include="Template\form\vendor\bootstrap\js\tooltip.js" />
+    <Content Include="Template\form\vendor\countdowntime\countdowntime.js" />
+    <Content Include="Template\form\vendor\css-hamburgers\hamburgers.css" />
+    <Content Include="Template\form\vendor\css-hamburgers\hamburgers.min.css" />
+    <Content Include="Template\form\vendor\daterangepicker\daterangepicker.css" />
+    <Content Include="Template\form\vendor\daterangepicker\daterangepicker.js" />
+    <Content Include="Template\form\vendor\daterangepicker\moment.js" />
+    <Content Include="Template\form\vendor\daterangepicker\moment.min.js" />
+    <Content Include="Template\form\vendor\jquery\jquery-3.2.1.min.js" />
+    <Content Include="Template\form\vendor\noui\nouislider.css" />
+    <Content Include="Template\form\vendor\noui\nouislider.js" />
+    <Content Include="Template\form\vendor\noui\nouislider.min.css" />
+    <Content Include="Template\form\vendor\noui\nouislider.min.js" />
+    <Content Include="Template\form\vendor\perfect-scrollbar\perfect-scrollbar.css" />
+    <Content Include="Template\form\vendor\perfect-scrollbar\perfect-scrollbar.min.js" />
+    <Content Include="Template\form\vendor\select2\select2.css" />
+    <Content Include="Template\form\vendor\select2\select2.js" />
+    <Content Include="Template\form\vendor\select2\select2.min.css" />
+    <Content Include="Template\form\vendor\select2\select2.min.js" />
+    <Content Include="Template\login\colorlib-regform-7\css\style.css" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\material-icon\css\material-design-iconic-font.css" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\material-icon\css\material-design-iconic-font.min.css" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\material-icon\fonts\Material-Design-Iconic-Font.svg" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\poppins-v5-latin-300.svg" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\poppins-v5-latin-300italic.svg" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\poppins-v5-latin-500.svg" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\poppins-v5-latin-500italic.svg" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\poppins-v5-latin-600.svg" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\poppins-v5-latin-700.svg" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\poppins-v5-latin-700italic.svg" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\poppins-v5-latin-800.svg" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\poppins-v5-latin-800italic.svg" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\poppins-v5-latin-900.svg" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\poppins-v5-latin-italic.svg" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\poppins-v5-latin-regular.svg" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\roboto-condensed-v16-latin-700.svg" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\roboto-condensed-v16-latin-700italic.svg" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\roboto-condensed-v16-latin-italic.svg" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\roboto-condensed-v16-latin-regular.svg" />
+    <Content Include="Template\login\colorlib-regform-7\images\signin-image.jpg" />
+    <Content Include="Template\login\colorlib-regform-7\images\signup-image.jpg" />
+    <Content Include="Template\login\colorlib-regform-7\js\main.js" />
+    <Content Include="Template\login\colorlib-regform-7\login.html" />
+    <Content Include="Template\login\colorlib-regform-7\readme.txt" />
+    <Content Include="Template\login\colorlib-regform-7\vendor\jquery\jquery-ui.min.js" />
+    <Content Include="Template\login\colorlib-regform-7\vendor\jquery\jquery.min.js" />
+    <Content Include="Template\login\css\style.css" />
+    <Content Include="Template\login\fonts\material-icon\css\material-design-iconic-font.css" />
+    <Content Include="Template\login\fonts\material-icon\css\material-design-iconic-font.min.css" />
+    <Content Include="Template\login\fonts\material-icon\fonts\Material-Design-Iconic-Font.svg" />
+    <Content Include="Template\login\fonts\poppins\poppins-v5-latin-300.svg" />
+    <Content Include="Template\login\fonts\poppins\poppins-v5-latin-300italic.svg" />
+    <Content Include="Template\login\fonts\poppins\poppins-v5-latin-500.svg" />
+    <Content Include="Template\login\fonts\poppins\poppins-v5-latin-500italic.svg" />
+    <Content Include="Template\login\fonts\poppins\poppins-v5-latin-600.svg" />
+    <Content Include="Template\login\fonts\poppins\poppins-v5-latin-700.svg" />
+    <Content Include="Template\login\fonts\poppins\poppins-v5-latin-700italic.svg" />
+    <Content Include="Template\login\fonts\poppins\poppins-v5-latin-800.svg" />
+    <Content Include="Template\login\fonts\poppins\poppins-v5-latin-800italic.svg" />
+    <Content Include="Template\login\fonts\poppins\poppins-v5-latin-900.svg" />
+    <Content Include="Template\login\fonts\poppins\poppins-v5-latin-italic.svg" />
+    <Content Include="Template\login\fonts\poppins\poppins-v5-latin-regular.svg" />
+    <Content Include="Template\login\fonts\poppins\roboto-condensed-v16-latin-700.svg" />
+    <Content Include="Template\login\fonts\poppins\roboto-condensed-v16-latin-700italic.svg" />
+    <Content Include="Template\login\fonts\poppins\roboto-condensed-v16-latin-italic.svg" />
+    <Content Include="Template\login\fonts\poppins\roboto-condensed-v16-latin-regular.svg" />
+    <Content Include="Template\login\images\signin-image.jpg" />
+    <Content Include="Template\login\images\signup-image.jpg" />
+    <Content Include="Template\login\js\main.js" />
+    <Content Include="Template\login\login.html" />
+    <Content Include="Template\login\readme.txt" />
+    <Content Include="Template\login\vendor\jquery\jquery-ui.min.js" />
+    <Content Include="Template\login\vendor\jquery\jquery.min.js" />
+    <Content Include="Template\planner\dragdrop\dist\index.html" />
+    <Content Include="Template\planner\dragdrop\dist\script.js" />
+    <Content Include="Template\planner\dragdrop\dist\style.css" />
+    <Content Include="Template\planner\dragdrop\license.txt" />
+    <Content Include="Template\planner\dragdrop\src\index.html" />
+    <Content Include="Template\planner\dragdrop\src\script.js" />
+    <Content Include="Template\planner\dragdrop\src\style.css" />
+    <Content Include="Template\planner\trello\dist\index.html" />
+    <Content Include="Template\planner\trello\dist\script.js" />
+    <Content Include="Template\planner\trello\dist\style.css" />
+    <Content Include="Template\planner\trello\license.txt" />
+    <Content Include="Template\planner\trello\src\index.html" />
+    <Content Include="Template\planner\trello\src\script.js" />
+    <Content Include="Template\planner\trello\src\style.css" />
+    <Content Include="Template\webTemplate\blog-detail.html" />
+    <Content Include="Template\webTemplate\blog.html" />
+    <Content Include="Template\webTemplate\contact.html" />
+    <Content Include="Template\webTemplate\css\aos.css" />
+    <Content Include="Template\webTemplate\css\bootstrap.min.css" />
+    <Content Include="Template\webTemplate\css\font-awesome.min.css" />
+    <Content Include="Template\webTemplate\css\owl.carousel.min.css" />
+    <Content Include="Template\webTemplate\css\owl.theme.default.min.css" />
+    <Content Include="Template\webTemplate\css\templatemo-digital-trend.css" />
+    <Content Include="Template\webTemplate\fonts\fontawesome-webfont.svg" />
+    <Content Include="Template\webTemplate\images\blog\blog-header-image.jpg" />
+    <Content Include="Template\webTemplate\images\blog\blog-sidebar-image.jpg" />
+    <Content Include="Template\webTemplate\images\blog\blog-sidebar-image01.jpg" />
+    <Content Include="Template\webTemplate\images\blog\blog-sidebar-image02.jpg" />
+    <Content Include="Template\webTemplate\images\female-avatar.png" />
+    <Content Include="Template\webTemplate\images\newsletter.png" />
+    <Content Include="Template\webTemplate\images\office.png" />
+    <Content Include="Template\webTemplate\images\organizer.png" />
+    <Content Include="Template\webTemplate\images\project\project-detail\interview-process.jpg" />
+    <Content Include="Template\webTemplate\images\project\project-detail\male-avatar.png" />
+    <Content Include="Template\webTemplate\images\project\project-detail\personal-website.png" />
+    <Content Include="Template\webTemplate\images\project\project-image01.jpg" />
+    <Content Include="Template\webTemplate\images\project\project-image02.jpg" />
+    <Content Include="Template\webTemplate\images\project\project-image03.jpg" />
+    <Content Include="Template\webTemplate\images\project\project-image04.jpg" />
+    <Content Include="Template\webTemplate\images\project\project-image05.jpg" />
+    <Content Include="Template\webTemplate\images\undraw_female_avatar.png" />
+    <Content Include="Template\webTemplate\images\undraw_male_avatar.png" />
+    <Content Include="Template\webTemplate\images\undraw_To_do_list_re_9nt7.png" />
+    <Content Include="Template\webTemplate\images\user.png" />
+    <Content Include="Template\webTemplate\images\working-girl.png" />
+    <Content Include="Template\webTemplate\images\workingGirl.png" />
+    <Content Include="Template\webTemplate\index.html" />
+    <Content Include="Template\webTemplate\js\aos.js" />
+    <Content Include="Template\webTemplate\js\bootstrap.min.js" />
+    <Content Include="Template\webTemplate\js\custom.js" />
+    <Content Include="Template\webTemplate\js\jquery.min.js" />
+    <Content Include="Template\webTemplate\js\owl.carousel.min.js" />
+    <Content Include="Template\webTemplate\js\rellax.min.js" />
+    <Content Include="Template\webTemplate\js\smoothscroll.js" />
+    <Content Include="Template\webTemplate\project-detail.html" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Template\form\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="Template\form\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Template\form\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="Template\form\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Template\form\fonts\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="Template\form\fonts\font-awesome-4.7.0\less\animated.less" />
+    <Content Include="Template\form\fonts\font-awesome-4.7.0\less\bordered-pulled.less" />
+    <Content Include="Template\form\fonts\font-awesome-4.7.0\less\core.less" />
+    <Content Include="Template\form\fonts\font-awesome-4.7.0\less\fixed-width.less" />
+    <Content Include="Template\form\fonts\font-awesome-4.7.0\less\font-awesome.less" />
+    <Content Include="Template\form\fonts\font-awesome-4.7.0\less\icons.less" />
+    <Content Include="Template\form\fonts\font-awesome-4.7.0\less\larger.less" />
+    <Content Include="Template\form\fonts\font-awesome-4.7.0\less\list.less" />
+    <Content Include="Template\form\fonts\font-awesome-4.7.0\less\mixins.less" />
+    <Content Include="Template\form\fonts\font-awesome-4.7.0\less\path.less" />
+    <Content Include="Template\form\fonts\font-awesome-4.7.0\less\rotated-flipped.less" />
+    <Content Include="Template\form\fonts\font-awesome-4.7.0\less\screen-reader.less" />
+    <Content Include="Template\form\fonts\font-awesome-4.7.0\less\stacked.less" />
+    <Content Include="Template\form\fonts\font-awesome-4.7.0\less\variables.less" />
+    <Content Include="Template\form\fonts\font-awesome-4.7.0\scss\font-awesome.scss" />
+    <Content Include="Template\form\fonts\font-awesome-4.7.0\scss\_animated.scss" />
+    <Content Include="Template\form\fonts\font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+    <Content Include="Template\form\fonts\font-awesome-4.7.0\scss\_core.scss" />
+    <Content Include="Template\form\fonts\font-awesome-4.7.0\scss\_fixed-width.scss" />
+    <Content Include="Template\form\fonts\font-awesome-4.7.0\scss\_icons.scss" />
+    <Content Include="Template\form\fonts\font-awesome-4.7.0\scss\_larger.scss" />
+    <Content Include="Template\form\fonts\font-awesome-4.7.0\scss\_list.scss" />
+    <Content Include="Template\form\fonts\font-awesome-4.7.0\scss\_mixins.scss" />
+    <Content Include="Template\form\fonts\font-awesome-4.7.0\scss\_path.scss" />
+    <Content Include="Template\form\fonts\font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+    <Content Include="Template\form\fonts\font-awesome-4.7.0\scss\_screen-reader.scss" />
+    <Content Include="Template\form\fonts\font-awesome-4.7.0\scss\_stacked.scss" />
+    <Content Include="Template\form\fonts\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="Template\form\fonts\iconic\fonts\Material-Design-Iconic-Font.eot" />
+    <Content Include="Template\form\fonts\iconic\fonts\Material-Design-Iconic-Font.ttf" />
+    <Content Include="Template\form\fonts\iconic\fonts\Material-Design-Iconic-Font.woff" />
+    <Content Include="Template\form\fonts\iconic\fonts\Material-Design-Iconic-Font.woff2" />
+    <Content Include="Template\form\fonts\montserrat\Montserrat-Black.ttf" />
+    <Content Include="Template\form\fonts\montserrat\Montserrat-BlackItalic.ttf" />
+    <Content Include="Template\form\fonts\montserrat\Montserrat-Bold.ttf" />
+    <Content Include="Template\form\fonts\montserrat\Montserrat-BoldItalic.ttf" />
+    <Content Include="Template\form\fonts\montserrat\Montserrat-ExtraBold.ttf" />
+    <Content Include="Template\form\fonts\montserrat\Montserrat-ExtraBoldItalic.ttf" />
+    <Content Include="Template\form\fonts\montserrat\Montserrat-ExtraLight.ttf" />
+    <Content Include="Template\form\fonts\montserrat\Montserrat-ExtraLightItalic.ttf" />
+    <Content Include="Template\form\fonts\montserrat\Montserrat-Italic.ttf" />
+    <Content Include="Template\form\fonts\montserrat\Montserrat-Light.ttf" />
+    <Content Include="Template\form\fonts\montserrat\Montserrat-LightItalic.ttf" />
+    <Content Include="Template\form\fonts\montserrat\Montserrat-Medium.ttf" />
+    <Content Include="Template\form\fonts\montserrat\Montserrat-MediumItalic.ttf" />
+    <Content Include="Template\form\fonts\montserrat\Montserrat-Regular.ttf" />
+    <Content Include="Template\form\fonts\montserrat\Montserrat-SemiBold.ttf" />
+    <Content Include="Template\form\fonts\montserrat\Montserrat-SemiBoldItalic.ttf" />
+    <Content Include="Template\form\fonts\montserrat\Montserrat-Thin.ttf" />
+    <Content Include="Template\form\fonts\montserrat\Montserrat-ThinItalic.ttf" />
+    <Content Include="Template\form\vendor\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="Template\form\vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="Template\form\vendor\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="Template\form\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Template\form\vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Template\form\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Template\login\.sass-cache\21880c0ffe15753a53f8402e9f64e1077e071510\style.scssc" />
+    <Content Include="Template\login\.sass-cache\2866be86c578bb583fbf023501bb9fd24cc3bf22\extend.scssc" />
+    <Content Include="Template\login\.sass-cache\2866be86c578bb583fbf023501bb9fd24cc3bf22\fonts.scssc" />
+    <Content Include="Template\login\.sass-cache\2866be86c578bb583fbf023501bb9fd24cc3bf22\global.scssc" />
+    <Content Include="Template\login\.sass-cache\2866be86c578bb583fbf023501bb9fd24cc3bf22\minxi.scssc" />
+    <Content Include="Template\login\.sass-cache\2866be86c578bb583fbf023501bb9fd24cc3bf22\variables.scssc" />
+    <Content Include="Template\login\.sass-cache\3948936f84e1a30385e73a9be140b58b48c82e15\style.scssc" />
+    <Content Include="Template\login\.sass-cache\643489b018602f15119d8f44aeb7fc79468873a9\main.scssc" />
+    <Content Include="Template\login\.sass-cache\643489b018602f15119d8f44aeb7fc79468873a9\responsive.scssc" />
+    <Content Include="Template\login\.sass-cache\7643c8aa2e335ff5e104bc47d8dd7f1a0693bb39\extend.scssc" />
+    <Content Include="Template\login\.sass-cache\7643c8aa2e335ff5e104bc47d8dd7f1a0693bb39\fonts.scssc" />
+    <Content Include="Template\login\.sass-cache\7643c8aa2e335ff5e104bc47d8dd7f1a0693bb39\global.scssc" />
+    <Content Include="Template\login\.sass-cache\7643c8aa2e335ff5e104bc47d8dd7f1a0693bb39\minxi.scssc" />
+    <Content Include="Template\login\.sass-cache\7643c8aa2e335ff5e104bc47d8dd7f1a0693bb39\variables.scssc" />
+    <Content Include="Template\login\.sass-cache\9dc767a56f3dc2f8a933300255cd2265f13191d4\main.scssc" />
+    <Content Include="Template\login\.sass-cache\9dc767a56f3dc2f8a933300255cd2265f13191d4\responsive.scssc" />
+    <Content Include="Template\login\colorlib-regform-7\.sass-cache\21880c0ffe15753a53f8402e9f64e1077e071510\style.scssc" />
+    <Content Include="Template\login\colorlib-regform-7\.sass-cache\2866be86c578bb583fbf023501bb9fd24cc3bf22\extend.scssc" />
+    <Content Include="Template\login\colorlib-regform-7\.sass-cache\2866be86c578bb583fbf023501bb9fd24cc3bf22\fonts.scssc" />
+    <Content Include="Template\login\colorlib-regform-7\.sass-cache\2866be86c578bb583fbf023501bb9fd24cc3bf22\global.scssc" />
+    <Content Include="Template\login\colorlib-regform-7\.sass-cache\2866be86c578bb583fbf023501bb9fd24cc3bf22\minxi.scssc" />
+    <Content Include="Template\login\colorlib-regform-7\.sass-cache\2866be86c578bb583fbf023501bb9fd24cc3bf22\variables.scssc" />
+    <Content Include="Template\login\colorlib-regform-7\.sass-cache\3948936f84e1a30385e73a9be140b58b48c82e15\style.scssc" />
+    <Content Include="Template\login\colorlib-regform-7\.sass-cache\643489b018602f15119d8f44aeb7fc79468873a9\main.scssc" />
+    <Content Include="Template\login\colorlib-regform-7\.sass-cache\643489b018602f15119d8f44aeb7fc79468873a9\responsive.scssc" />
+    <Content Include="Template\login\colorlib-regform-7\.sass-cache\7643c8aa2e335ff5e104bc47d8dd7f1a0693bb39\extend.scssc" />
+    <Content Include="Template\login\colorlib-regform-7\.sass-cache\7643c8aa2e335ff5e104bc47d8dd7f1a0693bb39\fonts.scssc" />
+    <Content Include="Template\login\colorlib-regform-7\.sass-cache\7643c8aa2e335ff5e104bc47d8dd7f1a0693bb39\global.scssc" />
+    <Content Include="Template\login\colorlib-regform-7\.sass-cache\7643c8aa2e335ff5e104bc47d8dd7f1a0693bb39\minxi.scssc" />
+    <Content Include="Template\login\colorlib-regform-7\.sass-cache\7643c8aa2e335ff5e104bc47d8dd7f1a0693bb39\variables.scssc" />
+    <Content Include="Template\login\colorlib-regform-7\.sass-cache\9dc767a56f3dc2f8a933300255cd2265f13191d4\main.scssc" />
+    <Content Include="Template\login\colorlib-regform-7\.sass-cache\9dc767a56f3dc2f8a933300255cd2265f13191d4\responsive.scssc" />
+    <Content Include="Template\login\colorlib-regform-7\css\style.css.map" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\material-icon\fonts\Material-Design-Iconic-Font.eot" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\material-icon\fonts\Material-Design-Iconic-Font.ttf" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\material-icon\fonts\Material-Design-Iconic-Font.woff" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\material-icon\fonts\Material-Design-Iconic-Font.woff2" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\poppins-v5-latin-300.eot" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\poppins-v5-latin-300.ttf" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\poppins-v5-latin-300.woff" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\poppins-v5-latin-300.woff2" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\poppins-v5-latin-300italic.eot" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\poppins-v5-latin-300italic.ttf" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\poppins-v5-latin-300italic.woff" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\poppins-v5-latin-300italic.woff2" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\poppins-v5-latin-500.eot" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\poppins-v5-latin-500.ttf" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\poppins-v5-latin-500.woff" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\poppins-v5-latin-500.woff2" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\poppins-v5-latin-500italic.eot" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\poppins-v5-latin-500italic.ttf" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\poppins-v5-latin-500italic.woff" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\poppins-v5-latin-500italic.woff2" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\poppins-v5-latin-600.eot" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\poppins-v5-latin-600.ttf" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\poppins-v5-latin-600.woff" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\poppins-v5-latin-600.woff2" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\poppins-v5-latin-700.eot" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\poppins-v5-latin-700.ttf" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\poppins-v5-latin-700.woff" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\poppins-v5-latin-700.woff2" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\poppins-v5-latin-700italic.eot" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\poppins-v5-latin-700italic.ttf" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\poppins-v5-latin-700italic.woff" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\poppins-v5-latin-700italic.woff2" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\poppins-v5-latin-800.eot" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\poppins-v5-latin-800.ttf" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\poppins-v5-latin-800.woff" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\poppins-v5-latin-800.woff2" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\poppins-v5-latin-800italic.eot" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\poppins-v5-latin-800italic.ttf" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\poppins-v5-latin-800italic.woff" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\poppins-v5-latin-800italic.woff2" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\poppins-v5-latin-900.eot" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\poppins-v5-latin-900.ttf" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\poppins-v5-latin-900.woff" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\poppins-v5-latin-900.woff2" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\poppins-v5-latin-italic.eot" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\poppins-v5-latin-italic.ttf" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\poppins-v5-latin-italic.woff" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\poppins-v5-latin-italic.woff2" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\poppins-v5-latin-regular.eot" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\poppins-v5-latin-regular.ttf" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\poppins-v5-latin-regular.woff" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\poppins-v5-latin-regular.woff2" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\roboto-condensed-v16-latin-700.eot" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\roboto-condensed-v16-latin-700.ttf" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\roboto-condensed-v16-latin-700.woff" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\roboto-condensed-v16-latin-700.woff2" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\roboto-condensed-v16-latin-700italic.eot" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\roboto-condensed-v16-latin-700italic.ttf" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\roboto-condensed-v16-latin-700italic.woff" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\roboto-condensed-v16-latin-700italic.woff2" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\roboto-condensed-v16-latin-italic.eot" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\roboto-condensed-v16-latin-italic.ttf" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\roboto-condensed-v16-latin-italic.woff" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\roboto-condensed-v16-latin-italic.woff2" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\roboto-condensed-v16-latin-regular.eot" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\roboto-condensed-v16-latin-regular.ttf" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\roboto-condensed-v16-latin-regular.woff" />
+    <Content Include="Template\login\colorlib-regform-7\fonts\poppins\roboto-condensed-v16-latin-regular.woff2" />
+    <Content Include="Template\login\colorlib-regform-7\scss\common\extend.scss" />
+    <Content Include="Template\login\colorlib-regform-7\scss\common\fonts.scss" />
+    <Content Include="Template\login\colorlib-regform-7\scss\common\global.scss" />
+    <Content Include="Template\login\colorlib-regform-7\scss\common\minxi.scss" />
+    <Content Include="Template\login\colorlib-regform-7\scss\common\variables.scss" />
+    <Content Include="Template\login\colorlib-regform-7\scss\layouts\main.scss" />
+    <Content Include="Template\login\colorlib-regform-7\scss\layouts\responsive.scss" />
+    <Content Include="Template\login\colorlib-regform-7\scss\style.scss" />
+    <Content Include="Template\login\css\style.css.map" />
+    <Content Include="Template\login\fonts\material-icon\fonts\Material-Design-Iconic-Font.eot" />
+    <Content Include="Template\login\fonts\material-icon\fonts\Material-Design-Iconic-Font.ttf" />
+    <Content Include="Template\login\fonts\material-icon\fonts\Material-Design-Iconic-Font.woff" />
+    <Content Include="Template\login\fonts\material-icon\fonts\Material-Design-Iconic-Font.woff2" />
+    <Content Include="Template\login\fonts\poppins\poppins-v5-latin-300.eot" />
+    <Content Include="Template\login\fonts\poppins\poppins-v5-latin-300.ttf" />
+    <Content Include="Template\login\fonts\poppins\poppins-v5-latin-300.woff" />
+    <Content Include="Template\login\fonts\poppins\poppins-v5-latin-300.woff2" />
+    <Content Include="Template\login\fonts\poppins\poppins-v5-latin-300italic.eot" />
+    <Content Include="Template\login\fonts\poppins\poppins-v5-latin-300italic.ttf" />
+    <Content Include="Template\login\fonts\poppins\poppins-v5-latin-300italic.woff" />
+    <Content Include="Template\login\fonts\poppins\poppins-v5-latin-300italic.woff2" />
+    <Content Include="Template\login\fonts\poppins\poppins-v5-latin-500.eot" />
+    <Content Include="Template\login\fonts\poppins\poppins-v5-latin-500.ttf" />
+    <Content Include="Template\login\fonts\poppins\poppins-v5-latin-500.woff" />
+    <Content Include="Template\login\fonts\poppins\poppins-v5-latin-500.woff2" />
+    <Content Include="Template\login\fonts\poppins\poppins-v5-latin-500italic.eot" />
+    <Content Include="Template\login\fonts\poppins\poppins-v5-latin-500italic.ttf" />
+    <Content Include="Template\login\fonts\poppins\poppins-v5-latin-500italic.woff" />
+    <Content Include="Template\login\fonts\poppins\poppins-v5-latin-500italic.woff2" />
+    <Content Include="Template\login\fonts\poppins\poppins-v5-latin-600.eot" />
+    <Content Include="Template\login\fonts\poppins\poppins-v5-latin-600.ttf" />
+    <Content Include="Template\login\fonts\poppins\poppins-v5-latin-600.woff" />
+    <Content Include="Template\login\fonts\poppins\poppins-v5-latin-600.woff2" />
+    <Content Include="Template\login\fonts\poppins\poppins-v5-latin-700.eot" />
+    <Content Include="Template\login\fonts\poppins\poppins-v5-latin-700.ttf" />
+    <Content Include="Template\login\fonts\poppins\poppins-v5-latin-700.woff" />
+    <Content Include="Template\login\fonts\poppins\poppins-v5-latin-700.woff2" />
+    <Content Include="Template\login\fonts\poppins\poppins-v5-latin-700italic.eot" />
+    <Content Include="Template\login\fonts\poppins\poppins-v5-latin-700italic.ttf" />
+    <Content Include="Template\login\fonts\poppins\poppins-v5-latin-700italic.woff" />
+    <Content Include="Template\login\fonts\poppins\poppins-v5-latin-700italic.woff2" />
+    <Content Include="Template\login\fonts\poppins\poppins-v5-latin-800.eot" />
+    <Content Include="Template\login\fonts\poppins\poppins-v5-latin-800.ttf" />
+    <Content Include="Template\login\fonts\poppins\poppins-v5-latin-800.woff" />
+    <Content Include="Template\login\fonts\poppins\poppins-v5-latin-800.woff2" />
+    <Content Include="Template\login\fonts\poppins\poppins-v5-latin-800italic.eot" />
+    <Content Include="Template\login\fonts\poppins\poppins-v5-latin-800italic.ttf" />
+    <Content Include="Template\login\fonts\poppins\poppins-v5-latin-800italic.woff" />
+    <Content Include="Template\login\fonts\poppins\poppins-v5-latin-800italic.woff2" />
+    <Content Include="Template\login\fonts\poppins\poppins-v5-latin-900.eot" />
+    <Content Include="Template\login\fonts\poppins\poppins-v5-latin-900.ttf" />
+    <Content Include="Template\login\fonts\poppins\poppins-v5-latin-900.woff" />
+    <Content Include="Template\login\fonts\poppins\poppins-v5-latin-900.woff2" />
+    <Content Include="Template\login\fonts\poppins\poppins-v5-latin-italic.eot" />
+    <Content Include="Template\login\fonts\poppins\poppins-v5-latin-italic.ttf" />
+    <Content Include="Template\login\fonts\poppins\poppins-v5-latin-italic.woff" />
+    <Content Include="Template\login\fonts\poppins\poppins-v5-latin-italic.woff2" />
+    <Content Include="Template\login\fonts\poppins\poppins-v5-latin-regular.eot" />
+    <Content Include="Template\login\fonts\poppins\poppins-v5-latin-regular.ttf" />
+    <Content Include="Template\login\fonts\poppins\poppins-v5-latin-regular.woff" />
+    <Content Include="Template\login\fonts\poppins\poppins-v5-latin-regular.woff2" />
+    <Content Include="Template\login\fonts\poppins\roboto-condensed-v16-latin-700.eot" />
+    <Content Include="Template\login\fonts\poppins\roboto-condensed-v16-latin-700.ttf" />
+    <Content Include="Template\login\fonts\poppins\roboto-condensed-v16-latin-700.woff" />
+    <Content Include="Template\login\fonts\poppins\roboto-condensed-v16-latin-700.woff2" />
+    <Content Include="Template\login\fonts\poppins\roboto-condensed-v16-latin-700italic.eot" />
+    <Content Include="Template\login\fonts\poppins\roboto-condensed-v16-latin-700italic.ttf" />
+    <Content Include="Template\login\fonts\poppins\roboto-condensed-v16-latin-700italic.woff" />
+    <Content Include="Template\login\fonts\poppins\roboto-condensed-v16-latin-700italic.woff2" />
+    <Content Include="Template\login\fonts\poppins\roboto-condensed-v16-latin-italic.eot" />
+    <Content Include="Template\login\fonts\poppins\roboto-condensed-v16-latin-italic.ttf" />
+    <Content Include="Template\login\fonts\poppins\roboto-condensed-v16-latin-italic.woff" />
+    <Content Include="Template\login\fonts\poppins\roboto-condensed-v16-latin-italic.woff2" />
+    <Content Include="Template\login\fonts\poppins\roboto-condensed-v16-latin-regular.eot" />
+    <Content Include="Template\login\fonts\poppins\roboto-condensed-v16-latin-regular.ttf" />
+    <Content Include="Template\login\fonts\poppins\roboto-condensed-v16-latin-regular.woff" />
+    <Content Include="Template\login\fonts\poppins\roboto-condensed-v16-latin-regular.woff2" />
+    <Content Include="Template\login\scss\common\extend.scss" />
+    <Content Include="Template\login\scss\common\fonts.scss" />
+    <Content Include="Template\login\scss\common\global.scss" />
+    <Content Include="Template\login\scss\common\minxi.scss" />
+    <Content Include="Template\login\scss\common\variables.scss" />
+    <Content Include="Template\login\scss\layouts\main.scss" />
+    <Content Include="Template\login\scss\layouts\responsive.scss" />
+    <Content Include="Template\login\scss\style.scss" />
+    <Content Include="Template\planner\dragdrop\README.markdown" />
+    <Content Include="Template\planner\trello\README.markdown" />
+    <Content Include="Template\webTemplate\fonts\fontawesome-webfont.eot" />
+    <Content Include="Template\webTemplate\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Template\webTemplate\fonts\fontawesome-webfont.woff" />
+    <Content Include="Template\webTemplate\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Template\webTemplate\fonts\FontAwesome.otf" />
+    <Content Include="Template\webTemplate\fonts\Plain-Bold.woff" />
+    <Content Include="Template\webTemplate\fonts\Plain-Bold.woff2" />
+    <Content Include="Template\webTemplate\fonts\Plain-Light.woff" />
+    <Content Include="Template\webTemplate\fonts\Plain-Light.woff2" />
+    <Content Include="Template\webTemplate\fonts\Plain-Regular.woff" />
+    <Content Include="Template\webTemplate\fonts\Plain-Regular.woff2" />
+    <Content Include="Views\Shared\AnaLayout.cshtml" />
+    <Content Include="Views\Shared\KullaniciLayout.cshtml" />
+    <Content Include="Views\Gorev\GorevEkle.cshtml" />
+    <Content Include="Views\Gorev\Index.cshtml" />
+    <Content Include="Views\Gorev\GorevGetir.cshtml" />
+    <Content Include="Views\GorevDurum\Index.cshtml" />
+    <Content Include="Views\GorevDurum\GorevDurumEkle.cshtml" />
+    <Content Include="Views\GorevDurum\GorevDurumGetir.cshtml" />
+    <Content Include="Views\GirisYap\GirisYap.cshtml" />
+    <Content Include="Views\KayitOl\KayitOl.cshtml" />
+    <Content Include="Views\Anasayfa\Index.cshtml" />
+    <Content Include="Views\Planner\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Views\CikisYap\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50716</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44320/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dbStarsUpPlannerModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Durumlar">
+    <Key>
+      <PropertyRef Name="DurumId" />
+    </Key>
+    <Property Name="DurumId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DurumAdi" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="GorevDurumları" Relationship="dbStarsUpPlannerModel.FK_GorevDurumları_Durumlar" FromRole="Durumlar" ToRole="GorevDurumları" />
+  </EntityType>
+  <EntityType Name="GorevDurumları">
+    <Key>
+      <PropertyRef Name="GorevDurumId" />
+    </Key>
+    <Property Name="GorevDurumId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GorevId" Type="Int32" />
+    <Property Name="DurumId" Type="Int32" />
+    <Property Name="Aciklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="GorevDurumTarihi" Type="DateTime" Precision="0" />
+    <Property Name="KullaniciId" Type="Int32" />
+    <Property Name="YapilacakIs1" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="YapilacakIs2" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="YapilacakIs3" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="YapilacakIs4" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Durumlar" Relationship="dbStarsUpPlannerModel.FK_GorevDurumları_Durumlar" FromRole="GorevDurumları" ToRole="Durumlar" />
+    <NavigationProperty Name="Gorevler" Relationship="dbStarsUpPlannerModel.FK_GorevDurumları_Gorevler" FromRole="GorevDurumları" ToRole="Gorevler" />
+    <NavigationProperty Name="Kullanicilar" Relationship="dbStarsUpPlannerModel.FK_GorevDurumları_Kullanicilar" FromRole="GorevDurumları" ToRole="Kullanicilar" />
+  </EntityType>
+  <EntityType Name="Gorevler">
+    <Key>
+      <PropertyRef Name="GorevId" />
+    </Key>
+    <Property Name="GorevId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GorevAdi" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Aciklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Notlar" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="GorevTarih" Type="DateTime" Precision="0" />
+    <Property Name="TahminiTarih" Type="DateTime" Precision="0" />
+    <Property Name="GerceklesenTarih" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="GorevDurumları" Relationship="dbStarsUpPlannerModel.FK_GorevDurumları_Gorevler" FromRole="Gorevler" ToRole="GorevDurumları" />
+    <Property Name="KullaniciId" Type="Int32" />
+    <NavigationProperty Name="Kullanicilar" Relationship="dbStarsUpPlannerModel.FK_Gorevler_Kullanicilar" FromRole="Gorevler" ToRole="Kullanicilar" />
+  </EntityType>
+  <EntityType Name="Kullanicilar">
+    <Key>
+      <PropertyRef Name="KullaniciId" />
+    </Key>
+    <Property Name="KullaniciId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KullaniciAdi" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Sifre" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="GorevDurumları" Relationship="dbStarsUpPlannerModel.FK_GorevDurumları_Kullanicilar" FromRole="Kullanicilar" ToRole="GorevDurumları" />
+    <Property Name="Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Mail" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Gorevler" Relationship="dbStarsUpPlannerModel.FK_Gorevler_Kullanicilar" FromRole="Kullanicilar" ToRole="Gorevler" />
+  </EntityType>
+  <EntityContainer Name="dbStarsUpPlannerEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Durumlar" EntityType="Self.Durumlar" />
+    <EntitySet Name="GorevDurumları" EntityType="Self.GorevDurumları" />
+    <EntitySet Name="Gorevler" EntityType="Self.Gorevler" />
+    <EntitySet Name="Kullanicilar" EntityType="Self.Kullanicilar" />
+    <AssociationSet Name="FK_GorevDurumları_Durumlar" Association="dbStarsUpPlannerModel.FK_GorevDurumları_Durumlar">
+      <End Role="Durumlar" EntitySet="Durumlar" />
+      <End Role="GorevDurumları" EntitySet="GorevDurumları" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GorevDurumları_Gorevler" Association="dbStarsUpPlannerModel.FK_GorevDurumları_Gorevler">
+      <End Role="Gorevler" EntitySet="Gorevler" />
+      <End Role="GorevDurumları" EntitySet="GorevDurumları" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GorevDurumları_Kullanicilar" Association="dbStarsUpPlannerModel.FK_GorevDurumları_Kullanicilar">
+      <End Role="Kullanicilar" EntitySet="Kullanicilar" />
+      <End Role="GorevDurumları" EntitySet="GorevDurumları" />
+    </AssociationSet>
+    <EntitySet Name="sysdiagrams" EntityType="dbStarsUpPlannerModel.sysdiagrams" />
+    <AssociationSet Name="FK_Gorevler_Kullanicilar" Association="dbStarsUpPlannerModel.FK_Gorevler_Kullanicilar">
+      <End Role="Kullanicilar" EntitySet="Kullanicilar" />
+      <End Role="Gorevler" EntitySet="Gorevler" />
+    </AssociationSet>
+  </EntityContainer>
+  <Association Name="FK_GorevDurumları_Durumlar">
+    <End Type="dbStarsUpPlannerModel.Durumlar" Role="Durumlar" Multiplicity="0..1" />
+    <End Type="dbStarsUpPlannerModel.GorevDurumları" Role="GorevDurumları" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Durumlar">
+        <PropertyRef Name="DurumId" />
+      </Principal>
+      <Dependent Role="GorevDurumları">
+        <PropertyRef Name="DurumId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GorevDurumları_Gorevler">
+    <End Type="dbStarsUpPlannerModel.Gorevler" Role="Gorevler" Multiplicity="0..1" />
+    <End Type="dbStarsUpPlannerModel.GorevDurumları" Role="GorevDurumları" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gorevler">
+        <PropertyRef Name="GorevId" />
+      </Principal>
+      <Dependent Role="GorevDurumları">
+        <PropertyRef Name="GorevId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GorevDurumları_Kullanicilar">
+    <End Type="dbStarsUpPlannerModel.Kullanicilar" Role="Kullanicilar" Multiplicity="0..1" />
+    <End Type="dbStarsUpPlannerModel.GorevDurumları" Role="GorevDurumları" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kullanicilar">
+        <PropertyRef Name="KullaniciId" />
+      </Principal>
+      <Dependent Role="GorevDurumları">
+        <PropertyRef Name="KullaniciId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_Gorevler_Kullanicilar">
+    <End Type="dbStarsUpPlannerModel.Kullanicilar" Role="Kullanicilar" Multiplicity="0..1" />
+    <End Type="dbStarsUpPlannerModel.Gorevler" Role="Gorevler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kullanicilar">
+        <PropertyRef Name="KullaniciId" />
+      </Principal>
+      <Dependent Role="Gorevler">
+        <PropertyRef Name="KullaniciId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

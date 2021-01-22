@@ -1,0 +1,61 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Giriş Yap</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="~/Template/login/fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="~/Template/login/css/style.css">
+</head>
+<body>
+
+    <div class="main">
+
+        <!-- Sing in  Form -->
+        <section class="sign-in">
+            <div class="container">
+                <div class="signin-content">
+                    <div class="signin-image">
+                        <figure><img src="~/Template/login/images/signin-image.jpg" alt="sing up image"></figure>
+                        <a href="/KayitOl/KayitOl/" class="signup-image-link">Kayıt Ol</a>
+                        <a href="/Anasayfa/Index/" class="signup-image-link">Anasayfaya Dön</a>
+                    </div>
+
+                    <div class="signin-form">
+                        <h2 class="form-title">Giriş Yap</h2>
+                        @using (Html.BeginForm("GirisYap", "GirisYap", FormMethod.Post))
+                        {
+                            <div class="form-group">
+                                <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" name="KullaniciAdi" id="your_name" placeholder="Kullanıcı Adınız" />
+                            </div>
+                            <div class="form-group">
+                                <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
+                                <input type="password" name="Sifre" id="your_pass" placeholder="Şifreniz" />
+                            </div>
+                            <div class="form-group form-button">
+                                <input type="submit" name="signin" id="signin" class="form-submit" value="Giriş Yap" />
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- JS -->
+    <script src="~/Template/login/vendor/jquery/jquery.min.js"></script>
+    <script src="~/Template/login/js/main.js"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

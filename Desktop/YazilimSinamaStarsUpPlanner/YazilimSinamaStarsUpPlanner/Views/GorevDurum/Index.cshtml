@@ -1,0 +1,46 @@
+﻿@using YazilimSinamaStarsUpPlanner.Models.Entity,
+@model List<GorevDurumları>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/KullaniciLayout.cshtml";
+}
+
+<div style="margin-top:20px; margin-bottom:20px; margin-left:20px; margin-right:20px;">
+    <h2>GÖREV DURUMLARI</h2>
+    <table class="table table-striped">
+        <tr>
+            <th>ID</th>
+            <th>GÖREV</th>
+            <th>DURUM</th>
+            <th>AÇIKLAMA</th>
+            <th>TARİH</th>
+            <th>KULLANICI</th>
+            <th>YAPILACAK İŞ 1</th>
+            <th>YAPILACAK İŞ 2</th>
+            <th>YAPILACAK İŞ 3</th>
+            <th>YAPILACAK İŞ 4</th>
+            <th>SİL</th>
+            <th>GÜNCELLE</th>
+        </tr>
+        @foreach (var k in Model)
+        {
+            <tr>
+                <td>@k.GorevDurumId</td>
+                <td>@k.Gorevler.GorevAdi</td>
+                <td>@k.Durumlar.DurumAdi</td>
+                <td>@k.Aciklama</td>
+                <td>@k.GorevDurumTarihi</td>
+                <td>@k.Kullanicilar.Ad&nbsp;@k.Kullanicilar.Soyad</td>
+                <td>@k.YapilacakIs1</td>
+                <td>@k.YapilacakIs2</td>
+                <td>@k.YapilacakIs3</td>
+                <td>@k.YapilacakIs4</td>
+                <td><a href="/GorevDurum/GorevDurumSil/@k.GorevDurumId" class="btn btn-danger">Sil</a></td>
+                <td><a href="/GorevDurum/GorevDurumGetir/@k.GorevDurumId" class="btn btn-success">Güncelle</a></td>
+            </tr>
+        }
+    </table>
+    <a href="/GorevDurum/GorevDurumEkle/" class="btn btn-primary">Görev Durum Ekle</a>
+
+</div>
+

@@ -1,0 +1,54 @@
+﻿@model YazilimSinamaStarsUpPlanner.Models.Entity.GorevDurumları
+@{
+    ViewBag.Title = "GorevDurumGetir";
+    Layout = "~/Views/Shared/KullaniciLayout.cshtml";
+}
+
+@using (Html.BeginForm("GorevDurumGuncelle", "GorevDurum", FormMethod.Post))
+{
+    <div></div>
+    <div class="form-group" style="margin-top:20px; margin-bottom:20px; margin-left:20px; margin-right:20px;">
+        <div style="margin-bottom:15px">
+            <label>Görev Durum Id</label>
+            @Html.TextBoxFor(k => k.GorevId, new { @class = "form-control" })
+        </div>
+        <div style="margin-bottom:15px">
+            <label>Görev Adı</label>
+            @Html.DropDownListFor(k => k.Gorevler.GorevId, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" })
+        </div>
+        <div style="margin-bottom:15px">
+            <label>Durum</label>
+            @Html.DropDownListFor(k => k.Durumlar.DurumId, (List<SelectListItem>)ViewBag.dgr2, new { @class = "form-control" })
+        </div>
+        <div style="margin-bottom:15px">
+            <label>Açıklama</label>
+            @Html.TextAreaFor(k => k.Aciklama, new { @class = "form-control" })
+        </div>
+        <div style="margin-bottom:15px">
+            <label>Tarih</label>
+            @Html.TextBoxFor(k => k.GorevDurumTarihi, "{0: dd.MM.yyyy}", new { @class = "form-control" })
+        </div>
+        <div style="margin-bottom:15px">
+            <label>Kullanıcı Adı Soyadı</label>
+            @Html.DropDownListFor(k => k.Kullanicilar.KullaniciId, (List<SelectListItem>)ViewBag.dgr3, new { @class = "form-control" })
+        </div>
+        <div style="margin-bottom:15px">
+            <label>Yapılacak İş 1</label>
+            @Html.TextBoxFor(k => k.YapilacakIs1, new { @class = "form-control" })
+        </div>
+        <div style="margin-bottom:15px">
+            <label>Yapılacak İş 2</label>
+            @Html.TextBoxFor(k => k.YapilacakIs2, new { @class = "form-control" })
+        </div>
+        <div style="margin-bottom:15px">
+            <label>Yapılacak İş 3</label>
+            @Html.TextBoxFor(k => k.YapilacakIs3, new { @class = "form-control" })
+        </div>
+        <div style="margin-bottom:15px">
+            <label>Yapılacak İş 4</label>
+            @Html.TextBoxFor(k => k.YapilacakIs4, new { @class = "form-control" })
+        </div>
+        <button class="btn btn-warning">Güncelle</button>
+    </div>
+}
+

@@ -1,0 +1,87 @@
+﻿
+@{
+    ViewBag.Title = "KullaniciLayout";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@Page.Title</title>
+    @RenderSection("head", required: false)
+
+
+    <title>StarsUP Planner</title>
+    <!--
+
+    DIGITAL TREND
+
+    https://templatemo.com/tm-538-digital-trend
+
+    -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="~/Template/webTemplate/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Template/webTemplate/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/Template/webTemplate/css/aos.css">
+    <link rel="stylesheet" href="~/Template/webTemplate/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/Template/webTemplate/css/owl.theme.default.min.css">
+
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="~/Template/webTemplate/css/templatemo-digital-trend.css">
+</head>
+<body>
+    <!-- MENU BAR -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fa fa-line-chart"></i>
+                STARS UP PLANNER
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a href="/Gorev/Index/" class="nav-link ">Görevler</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/GorevDurum/Index/" class="nav-link ">Görev Durumları</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/Planner/Index/" class="nav-link">Planner</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/CikisYap/Index/" class="nav-link">Çıkış Yap</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div>
+        @RenderBody()
+    </div>
+
+
+
+    <!-- SCRIPTS -->
+    <script src="~/Template/webTemplate/js/jquery.min.js"></script>
+    <script src="~/Template/webTemplate/js/bootstrap.min.js"></script>
+    <script src="~/Template/webTemplate/js/aos.js"></script>
+    <script src="~/Template/webTemplate/js/owl.carousel.min.js"></script>
+    <script src="~/Template/webTemplate/js/smoothscroll.js"></script>
+    <script src="~/Template/webTemplate/js/custom.js"></script>
+
+</body>
+</html>
+
+

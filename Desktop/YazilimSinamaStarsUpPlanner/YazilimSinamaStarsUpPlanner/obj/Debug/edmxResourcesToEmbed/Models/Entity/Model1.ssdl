@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dbStarsUpPlannerModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Durumlar">
+    <Key>
+      <PropertyRef Name="DurumId" />
+    </Key>
+    <Property Name="DurumId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DurumAdi" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="GorevDurumları">
+    <Key>
+      <PropertyRef Name="GorevDurumId" />
+    </Key>
+    <Property Name="GorevDurumId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GorevId" Type="int" />
+    <Property Name="DurumId" Type="int" />
+    <Property Name="Aciklama" Type="nvarchar(max)" />
+    <Property Name="GorevDurumTarihi" Type="date" />
+    <Property Name="KullaniciId" Type="int" />
+    <Property Name="YapilacakIs1" Type="nvarchar" MaxLength="150" />
+    <Property Name="YapilacakIs2" Type="nvarchar" MaxLength="150" />
+    <Property Name="YapilacakIs3" Type="nvarchar" MaxLength="150" />
+    <Property Name="YapilacakIs4" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="Gorevler">
+    <Key>
+      <PropertyRef Name="GorevId" />
+    </Key>
+    <Property Name="GorevId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GorevAdi" Type="nvarchar" MaxLength="150" />
+    <Property Name="Aciklama" Type="nvarchar(max)" />
+    <Property Name="Notlar" Type="nvarchar(max)" />
+    <Property Name="GorevTarih" Type="date" />
+    <Property Name="TahminiTarih" Type="date" />
+    <Property Name="GerceklesenTarih" Type="date" />
+    <Property Name="KullaniciId" Type="int" />
+  </EntityType>
+  <EntityType Name="Kullanicilar">
+    <Key>
+      <PropertyRef Name="KullaniciId" />
+    </Key>
+    <Property Name="KullaniciId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ad" Type="nvarchar" MaxLength="50" />
+    <Property Name="Soyad" Type="nvarchar" MaxLength="50" />
+    <Property Name="Mail" Type="nvarchar" MaxLength="150" />
+    <Property Name="KullaniciAdi" Type="nvarchar" MaxLength="20" />
+    <Property Name="Sifre" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK_GorevDurumları_Durumlar1">
+    <End Role="Durumlar" Type="Self.Durumlar" Multiplicity="0..1" />
+    <End Role="GorevDurumları" Type="Self.GorevDurumları" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Durumlar">
+        <PropertyRef Name="DurumId" />
+      </Principal>
+      <Dependent Role="GorevDurumları">
+        <PropertyRef Name="DurumId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GorevDurumları_Gorevler1">
+    <End Role="Gorevler" Type="Self.Gorevler" Multiplicity="0..1" />
+    <End Role="GorevDurumları" Type="Self.GorevDurumları" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gorevler">
+        <PropertyRef Name="GorevId" />
+      </Principal>
+      <Dependent Role="GorevDurumları">
+        <PropertyRef Name="GorevId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GorevDurumları_Kullanicilar1">
+    <End Role="Kullanicilar" Type="Self.Kullanicilar" Multiplicity="0..1" />
+    <End Role="GorevDurumları" Type="Self.GorevDurumları" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kullanicilar">
+        <PropertyRef Name="KullaniciId" />
+      </Principal>
+      <Dependent Role="GorevDurumları">
+        <PropertyRef Name="KullaniciId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Gorevler_Kullanicilar1">
+    <End Role="Kullanicilar" Type="Self.Kullanicilar" Multiplicity="0..1" />
+    <End Role="Gorevler" Type="Self.Gorevler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kullanicilar">
+        <PropertyRef Name="KullaniciId" />
+      </Principal>
+      <Dependent Role="Gorevler">
+        <PropertyRef Name="KullaniciId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="dbStarsUpPlannerModelStoreContainer">
+    <EntitySet Name="Durumlar" EntityType="Self.Durumlar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GorevDurumları" EntityType="Self.GorevDurumları" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Gorevler" EntityType="Self.Gorevler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kullanicilar" EntityType="Self.Kullanicilar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_GorevDurumları_Durumlar1" Association="Self.FK_GorevDurumları_Durumlar1">
+      <End Role="Durumlar" EntitySet="Durumlar" />
+      <End Role="GorevDurumları" EntitySet="GorevDurumları" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GorevDurumları_Gorevler1" Association="Self.FK_GorevDurumları_Gorevler1">
+      <End Role="Gorevler" EntitySet="Gorevler" />
+      <End Role="GorevDurumları" EntitySet="GorevDurumları" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GorevDurumları_Kullanicilar1" Association="Self.FK_GorevDurumları_Kullanicilar1">
+      <End Role="Kullanicilar" EntitySet="Kullanicilar" />
+      <End Role="GorevDurumları" EntitySet="GorevDurumları" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Gorevler_Kullanicilar1" Association="Self.FK_Gorevler_Kullanicilar1">
+      <End Role="Kullanicilar" EntitySet="Kullanicilar" />
+      <End Role="Gorevler" EntitySet="Gorevler" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
